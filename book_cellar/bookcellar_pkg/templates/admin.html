@@ -1,0 +1,135 @@
+{%extends "layout.html"%}
+{% block content %}
+<div class="content-section">
+<form action="" method="POST" enctype="multipart/form-data">
+    
+    {{ form_html.hidden_tag() }}
+    
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Add book</legend>
+
+        <div class="form-group">
+          {{ form_html.book_title.label(class="form-control-label")}}
+
+          {% if form_html.book_title.errors  %}
+            {{form_html.book_title(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-feedback">
+                {% for error in form_html.book_title.errors %}
+                    <span>
+                        {{error}}
+                    </span>
+                {% endfor %}
+            </div>
+            
+          {% else %}
+          {{form_html.book_title(class="form-control form-control-lg") }}
+
+          {% endif %}
+
+
+
+          
+        </div>
+
+        <div class="form-group">
+            {{form_html.description.label(class="form-control-label")}}
+            {% if form_html.description.errors  %}
+            {{form_html.description(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-feedback">
+                {% for error in form_html.description.errors %}
+                    <span>
+                        {{error}}
+                    </span>
+                {% endfor %}
+            </div>
+            
+          {% else %}
+          {{form_html.description(class="form-control form-control-lg") }}
+
+          {% endif %}
+
+        </div>
+
+        <div class="form-group">
+            {{form_html.category.label(class="form-control-label")}}
+            {% if form_html.category.errors %}
+            {{form_html.category(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-feedback">
+                {% for error in form_html.category.errors %}
+                    <span>
+                        {{error}}
+                    </span>
+                {% endfor %}
+            </div>
+            
+          {% else %}
+          {{form_html.category(class="form-control form-control-lg") }}
+
+          {% endif %}
+
+        </div>
+
+        <div class="form-group">
+            {{form_html.book_img.label()}}
+            {{form_html.book_img(class="form-control-file")}}
+            {% if form_html.book_img.errors %}
+                {% for error in form_html.book_img.errors %}
+                    <span class="text-danger">
+                        {{ error }}
+
+                    </span>
+                    <br>
+                {% endfor %}
+            {% endif %}
+        
+        </div>
+        <div class="form-group">
+            {{ form_html.author.label(class="form-control-label")}}
+
+            {% if form_html.author.errors  %}
+              {{form_html.author(class="form-control form-control-lg is-invalid")}}
+              <div class="invalid-feedback">
+                  {% for error in form_html.author.errors %}
+                      <span>
+                          {{error}}
+                      </span>
+                  {% endfor %}
+              </div>
+              
+            {% else %}
+            {{form_html.author(class="form-control form-control-lg") }}
+
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{ form_html.price.label(class="form-control-label")}}
+
+            {% if form_html.price.errors  %}
+              {{form_html.price(class="form-control form-control-lg is-invalid")}}
+              <div class="invalid-feedback">
+                  {% for error in form_html.price.errors %}
+                      <span>
+                          {{error}}
+                      </span>
+                  {% endfor %}
+              </div>
+              
+            {% else %}
+            {{form_html.price(class="form-control form-control-lg") }}
+
+            {% endif %}
+        </div>
+
+
+    </fieldset>
+    <div class="form-group">
+        {{ form_html.submit(class="btn btn-outline-info")}}
+    </div>
+
+
+</form>
+</div>
+
+
+{% endblock %}

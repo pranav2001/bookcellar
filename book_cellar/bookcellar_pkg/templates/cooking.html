@@ -1,0 +1,29 @@
+{%extends "layout.html"%}
+{% block content %}
+
+
+<section class="text-center">
+    <h3>Cooking</h3>
+    <div class="row ">
+    {% for cooking in Cooking %}
+    <div class="col-lg-6 mb-4">
+        <div class="card h-75" style="width: 18rem;">
+            <img src="{{url_for('static',filename='/book_pics/'+cooking.book_img)}}" class="card-img-top h-75" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{cooking.book_title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{cooking.author}}</h6>
+              <h6 class="card-title">{{cooking.price}}</h5>
+            <a href="{{url_for('add_to_cart',book_id=cooking.book_id)}}" class="btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+    
+    {% endfor %}
+</div>
+</section>
+
+
+
+
+
+{% endblock %}

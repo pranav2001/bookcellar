@@ -1,0 +1,32 @@
+{%extends "layout.html"%}
+{% block content %}
+
+
+
+<section class="text-center">
+    <h3>Biography</h3>
+    <div class="row  ">
+    {% for biography in Biography %}
+    <div class="col-lg-6 mb-4">
+        <div class="card h-75 " style="width: 18rem;">
+            <img src="{{url_for('static',filename='/book_pics/'+biography.book_img)}}" class="card-img-top h-75" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{biography.book_title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{biography.author}}</h6>
+              <h6 class="card-title">{{biography.price}}</h5>
+               <a href="{{url_for('add_to_cart',book_id=biography.book_id)}}" class="btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+
+    
+    {% endfor %}
+</div>
+    
+</section>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{%extends "layout.html"%}
+{% block content %}
+
+<div class="container hero-section w-100 senter">
+    <section class="text-center">
+    <h2>Educational</h2>
+    <hr style="margin-left: 400px;">
+    
+    <div class="roww mt-4 mb-0 cust-box">
+    {% for education in Educational[:3] %}
+        <div class="col-lg-3 mb-1 p-4 book">
+        <div class="card h-75" style="width: 18rem;">
+            <img src="{{url_for('static',filename='/book_pics/'+education.book_img)}}" class="card-img-top h-75" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{education.book_title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{education.author}}</h6>
+              <h6 class="card-title">{{education.price}}</h5>
+              
+            </div>
+          </div>
+          </div>
+
+    {% endfor %}
+
+
+    </div>
+    <a href="{{url_for('educational')}}" class="btn btn-primary mb-4 mt-0 view-btn" >View More</a>
+</section>
+<br>
+<br>
+<br>
+<section class="text-center">
+    <h2>Fiction</h2>
+    <hr style="margin-left: 400px;">
+    <div class="roww mt-4 mb-0">
+    {% for fiction in Fiction[:3] %}
+        <div class="col-lg-3 mb-1 p-4 book">
+        <div class="card h-75 " style="width: 18rem;">
+            <img src="{{url_for('static',filename='/book_pics/'+fiction.book_img)}}" class="card-img-top h-75" alt="...">
+            <div class="card-body book-card1">
+              <h5 class="card-title">{{fiction.book_title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{fiction.author}}</h6>
+              <h6 class="card-title">{{fiction.price}}</h5>
+              
+            </div>
+          </div>
+          
+          </div>
+
+
+    
+    {% endfor %}
+</div>
+    <a href="{{url_for('fiction')}}" class="btn btn-primary view-btn" >View More</a>
+</section>
+<br><br><br>
+
+<section class="text-center">
+    <h2>Biography</h2>
+    <hr style="margin-left: 400px;">
+    <div class="roww mt-4 mb-0">
+    {% for biography in Biography[:3] %}
+    <div class="col-lg-3 mb-1 p-4 book">
+        <div class="card h-75" style="width: 18rem;">
+            <img src="{{url_for('static',filename='/book_pics/'+biography.book_img)}}" class="card-img-top h-75" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{biography.book_title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{biography.author}}</h6>
+              <h6 class="card-title">{{biography.price}}</h5>
+              
+            </div>
+          </div>
+        </div>
+
+    
+    {% endfor %}
+</div>
+    <a href="{{url_for('biography')}}" class="btn btn-primary view-btn" >View More</a>
+</section>
+<br><br><br>
+<section class="text-center">
+    <h2>Cooking</h2>
+    <hr style="margin-left: 400px;">
+    <div class="roww mt-4 ">
+    {% for cooking in Cooking[:3] %}
+    <div class="col-lg-3 mb-1 p-4 book">
+        <div class="card h-75 " style="width: 18rem;">
+            <img src="{{url_for('static',filename='/book_pics/'+cooking.book_img)}}" class="card-img-top h-75" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{cooking.book_title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{cooking.author}}</h6>
+              <h6 class="card-title">{{cooking.price}}</h5>
+              
+            </div>
+          </div>
+        </div>
+    
+    {% endfor %}
+</div>
+    <a href="{{url_for('cooking')}}" class="btn btn-primary view-btn"  >View More</a>
+</section>
+<br><br><br>
+{% endblock %} 
